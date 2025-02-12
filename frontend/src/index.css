@@ -1,0 +1,45 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+/* Navbar Styling */
+.navbar-brand {
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+.navbar .bi-heart-pulse-fill {
+  color: #ffeb3b;
+  margin-right: 8px;
+  font-size: 1.5rem;
+}
+
+/* Therapist Card Styles */
+.therapist-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.therapist-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+.therapist-img {
+  height: 200px;
+  object-fit: cover;
+}
+
+/* Search Fields */
+.input-group-text {
+  background-color: #007bff;
+  color: white;
+  border: none;
+}
+
