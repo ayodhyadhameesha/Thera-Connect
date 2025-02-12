@@ -1,72 +1,85 @@
-# Thera Connect
- 
-# Getting Started with Create React App
+# **TheraConnect - AI-Powered Therapy Booking Platform**
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## **Overview**
+TheraConnect is a web application that allows clients to search for therapists, book video sessions, and make payments seamlessly. This project was developed using the MERN stack (MongoDB, Express, React, Node.js) with AI-powered enhancements.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## **AI Tools and APIs Used**
+### **1. OpenAI API (Optional / Mock Data Used)**
+- Initially planned for generating therapist profiles dynamically.
+- Due to API key constraints, we used manually created mock therapist data.
 
-### `npm start`
+### **2. Jitsi Meet API**
+- Used to generate unique video session links for each booking.
+- Ensures secure and seamless video conferencing between clients and therapists.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### **3. Stripe API**
+- Integrated to handle payments securely.
+- Clients can pay for their session via Stripe's checkout system.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+---
 
-### `npm test`
+## **Approach**
+### **Step 1: Backend Setup**
+- Initialized **Express.js server** and connected it to **MongoDB Atlas**.
+- Created **Mongoose models** for therapists and bookings.
+- Developed **REST API endpoints** for fetching therapists, making bookings, and processing payments.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### **Step 2: Frontend Development**
+- Built the UI using **React and Bootstrap**.
+- Implemented **search functionality** to filter therapists by specialty and availability.
+- Designed a **booking system** with a modal form.
 
-### `npm run build`
+### **Step 3: Video Call & Payments Integration**
+- Generated **Jitsi Meet video links** upon successful booking.
+- Integrated **Stripe payments**, redirecting users to a checkout page.
+- Displayed a **confirmation message** after successful payment.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### **Step 4: UI Enhancements**
+- Implemented **Bootstrap styling, loading animations, and hover effects**.
+- Added **success/error notifications** using `react-toastify`.
+- Used **FontAwesome icons** for a more polished UI.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+---
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## **Shortcuts and Assumptions**
+### **1. AI-Generated Data Was Replaced With Mock Data**
+- Due to OpenAI API constraints, we manually created therapist profiles.
 
-### `npm run eject`
+### **2. Simplified Authentication**
+- No user authentication system was implemented due to time constraints.
+- In a production environment, we would use **JWT authentication**.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### **3. Limited Payment Flow**
+- The system assumes a **flat fee of $50 per session**.
+- A more flexible approach would allow **custom pricing per therapist**.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### **4. Deployment Not Included**
+- The app is currently running locally.
+- Future steps include deploying the **backend on Render/Heroku** and the **frontend on Vercel/Netlify**.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+---
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## **How to Run the Project**
+### **1. Clone the Repository**
+```sh
+git clone <repo-link>
+cd TheraConnect
 
-## Learn More
+### **2. Backend Setup**
+cd backend
+npm install
+npm run dev
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### **3. Frontend Setup**
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+cd ../frontend
+npm install
+npm start
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### **4. Testing Features**
+-Open http://localhost:3000/ in your browser.
+-Search for therapists and book a session.
+-Proceed to payment and test with a Stripe test card (4242 4242 4242 4242).
+-Join the video session via Jitsi Meet.
